@@ -21,3 +21,24 @@ html,
 .title {
   font-size: 3rem;
 }
+
+.done {
+  text-decoration: line-through;
+	color: crimson;
+}
+
+.delete, .finish{
+	display: inline-flex;
+	
+}
+
+/*
+.finish{
+	display: flex;
+}
+*/
+
+
+.strik{
+	display: flex;
+}
