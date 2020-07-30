@@ -1,5 +1,11 @@
 {
- "name": "App",
+ "name": "Tasks",
+ "short_name": "Tasks",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "#ffffff"	
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -38,4 +44,5 @@
    "density": "4.0"
   }
  ]
+	
 }

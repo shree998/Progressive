@@ -10,10 +10,13 @@ window.onload = () => {
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
+
+//To return the value input by the user
 function inputLength() {
 	return input.value.length;
 }
 
+//To create List Item
 function createListElement() {
 	var li = document.createElement("li");
 	li.innerHTML = `<span class="strik">${input.value}</span>`;
@@ -29,33 +32,39 @@ function createListElement() {
 	input.value = "";
 }
 
+//To add List item after user clicks the Enter button
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
 	}
 }
 
+//To add List item after user presses Enter Button from the keyboard
 function addListAfterKeypress(event) {
 	if (inputLength() > 0 && event.keyCode === 13) {
 		createListElement();
 	}
 }
 
-function strike(event){
-		let par= event.target.parentElement;
+//To strikethough the item if pressed "done" or call the remove() function
+function strike(event)
+{
+	let par= event.target.parentElement;
 	let child = par.firstChild;
-		console.log('Par first child',child);
-		if(event.target.className==="finish"){
-						par.firstChild.classList.toggle("done");
-						
-						
-		}
-			
-		else{
+	console.log('Par first child',child);
+	if(event.target.className==="finish")
+	{
+			par.firstChild.classList.toggle("done");
+	}
+	else
+	{
 			remove(event);
-		}}
-function remove(event){
-	
+	}
+}
+
+//To remove the list item
+function remove(event)
+{
 	let remove = event.target.parentElement;
 	remove.remove();
 //	let sib = event.target.parentElement;
@@ -67,8 +76,12 @@ function remove(event){
 //	console.log('Parent Element of Delete',r);
 //		ul.removeChild(rem);
 }
+
+//Event Listener for handling click
 button.addEventListener("click", addListAfterClick);
 
+//Event Listener for handling keypress
 input.addEventListener("keypress", addListAfterKeypress);
 
+//Event Listener for handling keypress on done button
 ul.addEventListener("click", strike);
